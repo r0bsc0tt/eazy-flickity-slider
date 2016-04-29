@@ -7,6 +7,13 @@ add_action( 'init', 'eazy_flickity_slides', 0 );
 add_action( 'init', 'eazy_flickity_slider', 0 );
 //flush rewrite rules
 add_action('init', 'flush_rewrite_rules', 10 );
+//add CSS
+add_action( 'wp_enqueue_scripts', 'eazy_flickity_css' );
+//add js
+add_action( 'wp_enqueue_scripts', 'eazy_flickity_js' );
+
+
+
 
 
 //register custom post type to be used as slider images
@@ -82,6 +89,15 @@ function eazy_flickity_slider() {
     'show_tagcloud'              => false,
   );
   register_taxonomy( 'eazy_flickity_slider', array( 'eazy_flickity_slide' ), $args );
+}
+
+function eazy_flickity_css() {
+  wp_enqueue_style( 'eazy-flickity-slider',  EZ_FLICKITY_ELEMENTS_URL  . 'css/style.css' );
+}
+
+function eazy_flickity_js() {
+  wp_enqueue_script('flickity',  EZ_FLICKITY_ELEMENTS_URL  . 'js/flickity.pkgd.js', array('jquery'), false, true );
+  wp_enqueue_script('flickity-shortcode',  EZ_FLICKITY_ELEMENTS_URL  . 'js/flickity-shortcode.js', array('jquery'), false, true );
 }
 
 }//end if eazy_flickity_slide exists

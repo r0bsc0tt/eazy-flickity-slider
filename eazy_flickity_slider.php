@@ -23,3 +23,4 @@ define( 'EZ_FLICKITY_ELEMENTS_URL', str_replace('index.php','',plugins_url( 'ind
 //add functions
 require_once(EZ_FLICKITY_ELEMENTS_PATH . 'resources/eazy_flickity_slider_functions.php');
 require_once(EZ_FLICKITY_ELEMENTS_PATH . 'resources/eazy_flickity_slider_admin.php');
+require_once(EZ_FLICKITY_ELEMENTS_PATH . 'resources/eazy_flickity_slider_homepage.php');

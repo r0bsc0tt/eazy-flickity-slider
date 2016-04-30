@@ -1,10 +1,21 @@
 <?php 
 if ('is_admin') {
+
+  //add admin CSS & JS
+  if(!function_exists('eazy_flickity_admin_styles_scripts')){
+    add_action( 'admin_enqueue_scripts', 'eazy_flickity_admin_styles_scripts' );    
+    function eazy_flickity_admin_styles_scripts(){
+      //add css
+      wp_register_style('eazy-flickity-admin-css', plugins_url( 'css/admin-style.css', __FILE__ ), false, '1.0', false );
+      wp_enqueue_style('eazy-flickity-admin-css');
+    } 
+  }//end !function_exists('eazy_flickity_admin_styles_scripts')
+
+
   add_action('current_screen', 'eazy_flickity_load_admin');
   function eazy_flickity_load_admin(){
     $current_screen = get_current_screen();
     if( $current_screen ->post_type == 'eazy_flickity_slide'){
-      
 
       // change default text in title to say slide title instead of 
       if (!function_exists('custom_eazy_slider_title')){
@@ -84,19 +95,37 @@ if ('is_admin') {
             }
           } 
         }
-      }//end if !function_exists('eazy_flickity_admin_images')  
-
-
-      //add admin CSS
-      if(!function_exists('eazy_flickity_admin_css')){
-        add_action( 'admin_head', 'eazy_flickity_admin_css' );    
-        function eazy_flickity_admin_css(){
-          wp_register_style('eazy-flickity-admin-css', plugins_url( 'css/admin-style.css', __FILE__ ), false, '1.0', false );
-          wp_enqueue_style('eazy-flickity-admin-css');
-        } 
-      }//end !function_exists('eazy_flickity_admin_css')
-      
+      }//end if !function_exists('eazy_flickity_admin_images')       
 
     }// end if current screen post type is eazy_flickity_slide
+    
+    // if current screen is not eazy flickity silde, is add or edit page with a base of post
+    if( $current_screen ->post_type != 'eazy_flickity_slide' 
+      && $current_screen ->action == in_array($current_screen ->action, array('add', 'edit')) 
+      && $current_screen ->base == 'post'){
+
+      //add buttons for thickbox for inserting shorcode
+      add_action('media_buttons', 'add_eazy_flickity_slider_shortcode_button', 11);
+      add_action('admin_footer',  'add_eazy_flickity_slider_shortcode_popup');
+      //create the button
+      function add_eazy_flickity_slider_shortcode_button(){
+        echo '<a href="#TB_inline?width=480&height=480&inlineId=select_eazy_slider_shortcode" class="thickbox eazy-flickity-shortcode-button"
+                  id="add_eazy_flickity_slider_shortcode" title="' . __("Add Eazy Flickity Slider Shortcode", 'ez-flickity-slider' ) . '"><span class="eazy-flickity-shortcode-info"><p>' . __("Flickity Slider", 'ez-flickity-slider' ) . '</p></span></a>';
+      }
+
+      //create thickbox popup
+      function add_eazy_flickity_slider_shortcode_popup(){
+        add_action( 'admin_enqueue_scripts', 'eazy_flickity_admin_tinymce' );
+        function eazy_flickity_admin_tinymce(){
+          wp_enqueue_script('flickity-tinymce',  EZ_FLICKITY_ELEMENTS_URL  . 'js/flickity.tinymce.js', array('jquery'), false, true );        
+        }
+        eazy_flickity_slider_admin_tinymce_html();
+      }
+
+    }//end if current screen is not eazy flickity silde....
+
+
+
+
   }
 }// end if admin

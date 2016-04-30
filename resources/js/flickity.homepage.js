@@ -5,7 +5,7 @@
  * Licensed GPLv3 for open source use
  */
 
-jQuery('.r0bsc0tt-homepage-slider').flickity({
+jQuery('.eazy-flickity-homepage-slider').flickity({
  // options
 autoPlay: true,
 cellAlign: 'center',

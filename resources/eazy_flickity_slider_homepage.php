@@ -8,7 +8,7 @@ function eazy_flickity_slider_homepage() {
 	// The Loop
 	if ( $the_query->have_posts() ) {
 
-		echo '<div class="r0bsc0tt-homepage-slider">';
+		echo '<div class="eazy-flickity-homepage-slider">';
 		while ( $the_query->have_posts() ) {
 			$the_query->the_post();?>
 	            <div class="gallery-cell">         

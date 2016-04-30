@@ -3,7 +3,7 @@
 Plugin Name: Eazy Flickity Slider
 Plugin URI: http://robjscott.com/wordpress/
 Description:  Adds slide custom post type for uploading slides. Slides can be added to slider using shortcodes. 
-Version: 1.1.0
+Version: 1.0.1
 Author: Rob Scott, LLC
 Author URI: http://robjscott.com
 Text Domain: ez-flickity-slider

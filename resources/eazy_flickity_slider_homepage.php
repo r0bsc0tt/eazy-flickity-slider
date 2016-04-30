@@ -1,4 +1,5 @@
 <?php
+if (function_exists('eazy_flickity_slides')) {
 function eazy_flickity_slider_homepage() {
 
 	$args = array( 'post_type' => 'eazy_flickity_slide', 'eazy_flickity_slider' => 'homepage' );
@@ -23,6 +24,6 @@ function eazy_flickity_slider_homepage() {
 	} //end if query 
 
 /* Restore original Post Data */
-wp_reset_postdata();
-   
+wp_reset_postdata();  
+}
 }

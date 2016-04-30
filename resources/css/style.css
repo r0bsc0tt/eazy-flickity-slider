@@ -225,7 +225,7 @@ Shortcode Thickbox
   margin: 0;
 }
 .eazy-flickity-shortcode-info:before {
-  content: url("http://eazyadoptableanimals.com/wp-content/plugins/eazy-flickity-slider/css/slidericon.png");
+  content: url("../slidericon.png");
   display: inline-block;
   margin-right: .25em;
   vertical-align: sub;

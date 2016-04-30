@@ -16,10 +16,11 @@ function eazy_flickity_slider_homepage() {
 	            </div>
 	    <?php
 		}
-		echo '</div>';
-	} else {
+		echo '</div>'; ?>
+
+	<?php } else {
 		// no posts found
-	}
+	} //end if query 
 
 /* Restore original Post Data */
 wp_reset_postdata();

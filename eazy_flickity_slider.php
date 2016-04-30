@@ -24,3 +24,14 @@ define( 'EZ_FLICKITY_ELEMENTS_URL', str_replace('index.php','',plugins_url( 'ind
 require_once(EZ_FLICKITY_ELEMENTS_PATH . 'resources/eazy_flickity_slider_functions.php');
 require_once(EZ_FLICKITY_ELEMENTS_PATH . 'resources/eazy_flickity_slider_admin.php');
 require_once(EZ_FLICKITY_ELEMENTS_PATH . 'resources/eazy_flickity_slider_homepage.php');
+
+
+//add css & js
+add_action( 'wp_enqueue_scripts', 'eazy_flickity_scripts_styles' );
+function eazy_flickity_scripts_styles(){
+  wp_enqueue_style( 'eazy-flickity-slider',  EZ_FLICKITY_ELEMENTS_URL  . 'resources/css/style.css' );
+  wp_enqueue_script('flickity',  EZ_FLICKITY_ELEMENTS_URL  . 'resources/js/flickity.pkgd.js', array('jquery'), false, true );
+  if (is_front_page() && function_exists('eazy_flickity_slider_homepage')) {
+  wp_enqueue_script('flickity-homepage',  EZ_FLICKITY_ELEMENTS_URL  . 'resources/js/flickity.homepage.js', array('jquery'), false, true );
+  }
+}

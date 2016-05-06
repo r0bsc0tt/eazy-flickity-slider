@@ -1,4 +1,5 @@
 <?php
+if ('is_admin') {
 //add tinymce js file
 add_action( 'admin_enqueue_scripts', 'eazy_flickity_slider_tinymce_js' );    
 function eazy_flickity_slider_tinymce_js(){
@@ -6,9 +7,7 @@ wp_enqueue_script('flickity-tinymce-submit',  EZ_FLICKITY_ELEMENTS_URL  . 'resou
 }
 
 //create html to display slider
-function eazy_flickity_slider_admin_tinymce_html(){ 
-
-  ?>
+function eazy_flickity_slider_admin_tinymce_html(){ ?>
 <div id="select_eazy_slider_shortcode" style="display:none;">
   
   <div class="eazy_slider_shortcode_form_display">
@@ -50,6 +49,6 @@ function eazy_flickity_slider_admin_tinymce_html(){
     </a>
   </div>
 
-</div>
-	
-<?}
+</div><?
+}
+}

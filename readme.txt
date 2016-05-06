@@ -10,7 +10,7 @@ Tags: flickity slider, flickity, thumbnails slider, image slider plugin, Horizon
 Eazy Flickity Slider is an easy to use responsive slider that uses Flickity.js by Metafizzy to animate the slider.
 
 == Description ==
-Eazy Flickity Slider lets create responsive sliders, without being overly complex.
+Eazy Flickity Slider lets you create responsive sliders, without being overly complex.
 Adding slides is as easy as adding a post. Creating a slider works like adding a post to a category. You can then use a shortcode to get the slider to display on your site. There is a shortcode generator that shows up next to the add media button on the edit post & edit page sections of the admin. 
 The plugin uses flickity.js by Metafizzy to animate the slider. 
 

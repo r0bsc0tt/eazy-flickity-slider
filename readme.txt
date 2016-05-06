@@ -1,15 +1,16 @@
 === Eazy Flickity Slider ===
 Contributors: r0bsc0tt
-Tags: slider, flickity
 Requires at least: 4.5
 Tested up to: 4.5.1
 Stable tag: trunk
 License: GPLv2 or any later version
 License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+Tags: flickity slider, flickity, thumbnails slider, image slider plugin, Horizontal slider, Photo Slideshow, slider plugin, slider image, slide, slideshow image, slider images, gallery slider, touch slider, slides, slide show, HTML5 slider, images slider, slider, jquery slider, responsive slideshow, free slider, Photo Slider, photo, picture, wordpress slideshow, best image slider, jquery slideshow, best slider plugin, images, responsive, image, gallery, photos, javascript, jquery, posts slider, pictures, slideshow images, content slider, wordpress slider, shortcode, responsive slider, banner, swipe, slider widget, slideshow plugin, carousel slider, revolution slider, image slider, content slideshow, best slider, slideshow, carousel, picture slider, slider shortcode, image slideshow, flickity.js, post slider
 
-Eazy Flickity Slider is an easy to use slider that uses Flickity.js by Metafizzy to animate the slider.
+Eazy Flickity Slider is an easy to use responsive slider that uses Flickity.js by Metafizzy to animate the slider.
 
 == Description ==
+Eazy Flickity Slider lets create responsive sliders, without being overly complex.
 Adding slides is as easy as adding a post. Creating a slider works like adding a post to a category. You can then use a shortcode to get the slider to display on your site. There is a shortcode generator that shows up next to the add media button on the edit post & edit page sections of the admin. 
 The plugin uses flickity.js by Metafizzy to animate the slider. 
 
@@ -44,5 +45,9 @@ Unfortunately, there are not currently any controls for the slider built into th
 8. Slider appears via WordPress magic. 
 
 == Changelog ==
+= 1.0 =
+* Initial version of plugin.
+
+== Upgrade Notice ==
 = 1.0 =
 * Initial version of plugin.

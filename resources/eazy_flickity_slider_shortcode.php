@@ -29,9 +29,15 @@ function eazy_flickity_slider_shortcode($atts){
   $eazy_flickity_slider = $atts['eazy_flickity_slider'];
 
   //set query options
-  $eazyoptions = array( 'post_type' => 'eazy_flickity_slide', 'order' => $order, 
-    'orderby' => $orderby, 'posts_per_page' => $posts, 'height' => $height, 
-    'width' => $width, 'eazy_flickity_slider' => $eazy_flickity_slider, ); 
+  $eazyoptions = array( 
+    'post_type' => 'eazy_flickity_slide', 
+    'order' => $order, 
+    'orderby' => $orderby, 
+    'posts_per_page' => $posts, 
+    'height' => $height, 
+    'width' => $width, 
+    'eazy_flickity_slider' => $eazy_flickity_slider, 
+  ); 
       
   // The Query
   $eazyquery = new WP_Query( $eazyoptions );

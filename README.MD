@@ -32,8 +32,11 @@ Tested up to: 4.5.1
 ##Changelog
 = 1.0.2 =  
 Add conditional statement to shortcode to prevent height and width form showing when not set
+
 Remove escaped quote from readme
+
 Add Lazy Load to homepage JS
+
 Remove repetitive CSS
 
 = 1.0.1 =  

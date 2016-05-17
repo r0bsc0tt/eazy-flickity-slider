@@ -12,8 +12,8 @@ function eazy_flickity_slider_shortcode($atts){
       'orderby' =>'',
       'post_date' =>'',
       'posts' => -1,
-      'height' => '',
-      'width' => '',
+      'height' => NULL,
+      'width' => NULL,
       'eazy_flickity_slider' => '',
     ),
     $atts
@@ -45,10 +45,13 @@ function eazy_flickity_slider_shortcode($atts){
 
   // The Loop
   if ( $eazyquery->have_posts() ) {
+      
       //Check if slider name is set, if it is set add slider name to id
       if(isset($eazy_flickity_slider)){ 
-        $flickity_open = '<div class="gallery flickity-shortcode" 
-        style="max-height:'. $height .'; max-width:'. $width .';"  id="slider-'. $eazy_flickity_slider .'" >';
+        $flickity_open = '<div class="gallery flickity-shortcode" id="slider-'. $eazy_flickity_slider .'" style="';
+          if (isset($width)) {$flickity_open .= 'max-width: '. $width . '; ';}
+          if (isset($height)) {$flickity_open .= 'max-height: '. $height . '; ';}
+      $flickity_open .= '">';
       }else{
         $flickity_open = '<div class="gallery flickity-shortcode" id="all-slides">';
       }//end if 

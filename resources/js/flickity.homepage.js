@@ -12,6 +12,7 @@ cellAlign: 'center',
 contain: true,
 imagesLoaded: true,
 //freeScroll: true,
+lazyLoad: true,
 wrapAround: true,
 //cellSelector: '.gallery-cell',
 //setGallerySize: false

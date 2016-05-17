@@ -152,20 +152,21 @@ eazy_flickity_slider
 .flickity-shortcode{
   overflow: hidden;
 }
+
 .gallery-cell {
   width: 100%;
-  max-height: 511px;
-  min-height: 180px;
   margin-right: 10px;
 }
+
 .gallery-cell img {
   width: 100%;
   height: auto;
 }
 
 .flickity-page-dots {
-  bottom: 1em;
+  bottom: 2em;
 }
+
 .flickity-page-dots .dot {
   background-color: white;
   height: 4px;
@@ -186,55 +187,13 @@ eazy_flickity_slider
   transform: translateY(-50%);
   width: 25px;
 }
+
 .flickity-prev-next-button.previous {
   left: 2%;
 }
+
 .flickity-prev-next-button.next {
   right: 2%;
-}
-
-/*****************
-Shortcode Thickbox
-*****************/
-.eazy-flickity-shortcode-button {
-  background: #f7f7f7;
-  border-color: #ccc;
-  border-radius: 3px;
-  border-style: solid;
-  border-width: 1px;
-  box-shadow: 0 1px 0 #ccc;
-  box-sizing: border-box;
-  color: #555;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 13px;
-  height: 28px;
-  line-height: 26px;
-  margin: 0;
-  padding: 0 10px 1px;
-  text-decoration: none;
-  vertical-align: top;
-  white-space: nowrap;
-}
-.eazy-flickity-shortcode-button:hover {
-  background-color: #fafafa;
-  border-color: #999;
-  color: #23282d;
-}
-
-.eazy-flickity-shortcode-info {
-  display: block;
-  margin: 0;
-}
-.eazy-flickity-shortcode-info:before {
-  content: url("../slidericon.png");
-  display: inline-block;
-  margin-right: .25em;
-  vertical-align: sub;
-}
-.eazy-flickity-shortcode-info p {
-  display: inline-block;
-  margin: 0;
 }
 
 /* end eazy_flickity_slider */

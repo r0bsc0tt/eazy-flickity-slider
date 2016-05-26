@@ -45,6 +45,9 @@ Unfortunately, there are not currently any controls for the slider built into th
 8. Slider appears via WordPress magic. 
 
 == Changelog ==
+= 1.1 =
+*Add flickity.shortcode.dimensions.js to insert the inline style for shortcodes height and width
+
 = 1.0.2 =
 *Add conditional statement to shortcode to prevent height and width form showing when not set
 *Remove escaped quotes from readme

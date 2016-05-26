@@ -14,6 +14,7 @@
         alert("Please select a slider to use");
         return;
       }
+
       if (form_shortcode !== "") {
         //add shortcode to editor
         window.send_to_editor("[eazy-flickity-slider eazy_flickity_slider=\"" + form_shortcode + "\" width=\"" + eazy_slider_width + "\" height=\"" + eazy_slider_height + "\"]");

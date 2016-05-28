@@ -61,9 +61,11 @@ if (function_exists('eazy_flickity_slides')) {
         while ( $eazyquery->have_posts() ) {
           $eazyquery->the_post(); 
           $thumb_id = get_post_thumbnail_id();
+          $eazyimage_attributes = wp_get_attachment_image_src($thumb_id,'full', true);
+          print_r($image_attributes);
           $flickity_slides[] = "
           <div class='gallery-cell'>
-          <img src='".wp_get_attachment_image_src($thumb_id,'full', true)[0]."' 
+          <img src='".$eazyimage_attributes[0]."' 
           alt='".get_post(get_post_thumbnail_id())->post_title."'>
           </div>";
         } //end while

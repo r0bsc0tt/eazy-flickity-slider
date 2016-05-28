@@ -87,7 +87,7 @@ if (function_exists('eazy_flickity_slides')) {
     return $slider;  
   }
 
-
+ if (!is_front_page()){  
     add_action( 'wp_enqueue_scripts', 'eazy_flickity_shortcode_scripts_styles' );
     function eazy_flickity_shortcode_scripts_styles(){
     wp_enqueue_script('eazy-flickity-shortcode-extra', EZ_FLICKITY_ELEMENTS_URL  . 'resources/js/flickity.shortcode.dimensions.js', array(), false, true );
@@ -122,10 +122,10 @@ if (function_exists('eazy_flickity_slides')) {
           break;  
         } //end if preg match
       } //end foreach
-    if (!is_front_page()){  
+   
     wp_localize_script( 'eazy-flickity-shortcode-extra', 'eazyoptions', $toys );
     }
-    }
+}
 
 
 }

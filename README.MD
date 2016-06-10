@@ -30,6 +30,9 @@ Requires at least: 4.5
 Tested up to: 4.5.1  
 
 ##Changelog
+= 1.1.2 =
+Update CSS for gallery-cell.
+
 = 1.1.1 =
 Update eazy_flickity_slider_shortcode.php to use a variable to store the array from wp_get_attachment_image_src on line ~64.
 

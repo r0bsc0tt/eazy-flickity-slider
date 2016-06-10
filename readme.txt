@@ -45,6 +45,9 @@ Unfortunately, there are not currently any controls for the slider built into th
 8. Slider appears via WordPress magic. 
 
 == Changelog ==
+= 1.1.2 =
+*Update CSS for gallery-cell.
+
 = 1.1.1 =
 *Update eazy_flickity_slider_shortcode.php to use a variable to store the array from wp_get_attachment_image_src on line ~64.
 

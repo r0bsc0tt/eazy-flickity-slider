@@ -3,7 +3,7 @@
 Plugin Name: Eazy Flickity Slider
 Plugin URI: http://robjscott.com/wordpress/
 Description:  Easily create slides to use with responsive sliders. Add them to page or post. Displays them using flickity.js by metafizzy.  
-Version: 1.1.2
+Version: 1.2.0
 Author: Rob Scott, LLC
 Author URI: http://robjscott.com
 Text Domain: ez-flickity-slider

@@ -27,9 +27,14 @@ Unfortunately, there are not currently any controls for the slider built into th
 
 ##WordPress Requirements
 Requires at least: 4.5  
-Tested up to: 4.5.1  
+Tested up to: 4.5.3  
 
 ##Changelog
+= 1.2.0 =
+*Update shortcode function to declare width and height of shortcode
+*Remove is front page conditional from shortcode
+*Remove outdated variable names 
+
 = 1.1.2 =
 Update CSS for gallery-cell.
 

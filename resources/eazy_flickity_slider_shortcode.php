@@ -62,7 +62,6 @@ if (function_exists('eazy_flickity_slides')) {
           $eazyquery->the_post(); 
           $thumb_id = get_post_thumbnail_id();
           $eazyimage_attributes = wp_get_attachment_image_src($thumb_id,'full', true);
-          print_r($image_attributes);
           $flickity_slides[] = "
           <div class='gallery-cell'>
           <img src='".$eazyimage_attributes[0]."' 
@@ -87,7 +86,7 @@ if (function_exists('eazy_flickity_slides')) {
     return $slider;  
   }
 
- if (!is_front_page()){  
+ 
     add_action( 'wp_enqueue_scripts', 'eazy_flickity_shortcode_scripts_styles' );
     function eazy_flickity_shortcode_scripts_styles(){
     wp_enqueue_script('eazy-flickity-shortcode-extra', EZ_FLICKITY_ELEMENTS_URL  . 'resources/js/flickity.shortcode.dimensions.js', array(), false, true );
@@ -102,30 +101,35 @@ if (function_exists('eazy_flickity_slides')) {
           && array_key_exists( 2, $matches )
           && in_array( 'eazy-flickity-slider', $matches[2] ) ){
             foreach ($matches[0] as $key => $value) {
-              $toys[$key] = $value;
+              $matches[$key] = $value;
               
               $eznameflag = '~eazy_flickity_slider="(.*?)"~';
               $ezwidthflag = '~width="(.*?)"~';
               $ezheightflag = '~height="(.*?)"~';
+              $thiswidth = '';
+              $thisheight = '';
+
               if(preg_match($eznameflag, $value, $m)){
                 $thisname = $m[1];
+                //$matches[$key] .= ['sliderid' => $thisname];
               }
               if(preg_match($ezwidthflag, $value, $m)){
                 $thiswidth = $m[1];
+                //$matches[$key] .= ['width' => $thiswidth];
               }
               if(preg_match($ezheightflag, $value, $m)){
                 $thisheight = $m[1];
+                //$matches[$key] .= ['height' => $thisheight];
               }
 
-              $toys[$key] = ['sliderid' => $thisname, 'width' => $thiswidth, 'height' => $thisheight];
+              $matches[$key] = ['sliderid' => $thisname, 'width' => $thiswidth, 'height' => $thisheight];
             }
           break;  
         } //end if preg match
       } //end foreach
    
-    wp_localize_script( 'eazy-flickity-shortcode-extra', 'eazyoptions', $toys );
+    wp_localize_script( 'eazy-flickity-shortcode-extra', 'eazyoptions', $matches );
     }
-}
 
 
 }

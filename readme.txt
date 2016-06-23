@@ -1,7 +1,7 @@
 === Eazy Flickity Slider ===
 Contributors: r0bsc0tt
 Requires at least: 4.5
-Tested up to: 4.5.1
+Tested up to: 4.5.3
 Stable tag: trunk
 License: GPLv2 or any later version
 License URI: http://www.gnu.org/licenses/gpl-2.0.txt
@@ -45,6 +45,11 @@ Unfortunately, there are not currently any controls for the slider built into th
 8. Slider appears via WordPress magic. 
 
 == Changelog ==
+= 1.2.0 =
+*Update shortcode function to declare width and height of shortcode
+*Remove is front page conditional from shortcode
+*Remove outdated variable names 
+
 = 1.1.2 =
 *Update CSS for gallery-cell.
 
@@ -64,5 +69,8 @@ Unfortunately, there are not currently any controls for the slider built into th
 * Initial version of plugin.
 
 == Upgrade Notice ==
+= 1.2.0 =
+*Updated to improve shortcode compatibility
+
 = 1.0.1 =
 * Initial version of plugin.

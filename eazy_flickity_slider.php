@@ -33,8 +33,8 @@ add_action( 'wp_enqueue_scripts', 'eazy_flickity_scripts_styles' );
 function eazy_flickity_scripts_styles(){
   wp_enqueue_style( 'eazy-flickity-slider',  EZ_FLICKITY_ELEMENTS_URL  . 'resources/css/style.css' );
   wp_enqueue_script('flickity',  EZ_FLICKITY_ELEMENTS_URL  . 'resources/js/flickity.pkgd.min.js', array('jquery'), false, true );
+  wp_enqueue_script('flickity-shortcode',  EZ_FLICKITY_ELEMENTS_URL  . 'resources/js/flickity.shortcode.js', array('jquery'), false, true );
   if (is_front_page() && function_exists('eazy_flickity_slider_homepage')) {
   wp_enqueue_script('flickity-homepage',  EZ_FLICKITY_ELEMENTS_URL  . 'resources/js/flickity.homepage.js', array('jquery'), false, true );
   }
-  wp_enqueue_script('flickity-shortcode',  EZ_FLICKITY_ELEMENTS_URL  . 'resources/js/flickity.shortcode.js', array('jquery'), false, true );
 }

@@ -45,6 +45,9 @@ Unfortunately, there are not currently any controls for the slider built into th
 8. Slider appears via WordPress magic. 
 
 == Changelog ==
+= 1.2.1 =
+*Update flickity.shortcode.dimensions.js to make height and width conditional
+
 = 1.2.0 =
 *Update shortcode function to declare width and height of shortcode
 *Remove is front page conditional from shortcode

@@ -10,7 +10,7 @@
   cursor: pointer;
   display: inline-block;
   font-size: 13px;
-  height: 28px;
+  height: 32px;
   line-height: 26px;
   margin: 0;
   padding: 0 10px 1px;
@@ -26,7 +26,7 @@
 
 .eazy-flickity-shortcode-info {
   display: block;
-  margin: 0;
+  margin: -5px 0 0 0;
 }
 .eazy-flickity-shortcode-info:before {
   content: url("../css/slidericon.png");
@@ -38,16 +38,131 @@
   display: inline-block;
   margin: 0;
 }
-.eazy-flickity-slider-submit-buttons{
-  padding: 15px;
-}
-.eazy_slider_shortcode_form .form_instructions{
-  margin-bottom: 0;
-  margin-top: 0;
-}
 
 .column-eazy_flickity_image img {
   height: auto;
   max-height: 100%;
   max-width: 100%;
-} 
+}
+
+.eazy-slider-shortcode-form-display .eazy-shortcode-section {
+  margin: 1em auto;
+}
+.eazy-slider-shortcode-form-display .eazy-shortcode-section:first-child {
+  margin-top: .25em;
+}
+.eazy-slider-shortcode-form-display .eazy-section-title {
+  font-size: 1.75em;
+  margin-bottom: 0;
+}
+.eazy-slider-shortcode-form-display .form-instructions {
+  margin: 0 auto;
+}
+.eazy-slider-shortcode-form-display .form-instructions strong {
+  color: #990000;
+}
+.eazy-slider-shortcode-form-display .eazy-silder-shortcode-settings .eazy-slider-shortcode-name .eazy-section-title {
+  margin-top: .25em;
+}
+.eazy-slider-shortcode-form-display .eazy-silder-shortcode-settings .eazy-slider-shorcode-size .eazy-flickity-slider-dimension {
+  display: inline-block;
+  width: 100%;
+}
+.eazy-slider-shortcode-form-display .eazy-silder-shortcode-settings .eazy-slider-shorcode-size .eazy-flickity-slider-dimension label {
+  display: block;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+.eazy-flickity-slider-submit-buttons {
+  padding: 15px 0;
+}
+
+#eazy_flickity_slider_options .inside .eazy-section-title {
+  font-size: 1.75em;
+  margin-bottom: 0;
+  margin-top: 0.5em;
+}
+#eazy_flickity_slider_options .inside .eazy-slider-shortcode-options .form-instructions {
+  margin: 0 auto;
+}
+#eazy_flickity_slider_options .inside .eazy-slider-shortcode-options .eazy-flickity-slider-option {
+  display: inline-block;
+  margin: 1.75em 0;
+  width: 75vw;
+}
+#eazy_flickity_slider_options .inside .eazy-slider-shortcode-options .eazy-flickity-slider-option p {
+  display: inline-block;
+  font-weight: 800;
+  line-height: 1;
+  margin: 0 auto;
+  width: 90%;
+}
+#eazy_flickity_slider_options .inside .eazy-slider-shortcode-options .eazy-flickity-slider-option a {
+  display: inline-block;
+  text-decoration: none;
+  width: 8%;
+}
+#eazy_flickity_slider_options .inside .eazy-slider-shortcode-options .eazy-flickity-slider-option a span {
+  font-size: 17px;
+  height: 17px;
+  width: 17px;
+}
+#eazy_flickity_slider_options .inside .eazy-slider-shortcode-options .eazy-flickity-slider-option select {
+  display: block;
+  width: 100%;
+}
+
+@media screen and (min-width: 782px) {
+  .eazy-flickity-shortcode-button {
+    height: 28px;
+  }
+
+  .eazy-flickity-shortcode-info {
+    margin: 0;
+  }
+
+  .eazy-slider-shortcode-form-display .eazy-silder-shortcode-settings .eazy-slider-shorcode-size .eazy-flickity-slider-dimension {
+    display: inline-block;
+    width: 45%;
+  }
+  .eazy-slider-shortcode-form-display .eazy-silder-shortcode-settings .eazy-slider-shorcode-size .eazy-flickity-slider-dimension label {
+    display: block;
+  }
+
+  .eazy-section-title {
+    font-size: 1.75em;
+    margin-bottom: 0;
+  }
+
+  .eazy-slider-shortcode-options .form-instructions {
+    margin: 0 auto;
+  }
+  .eazy-slider-shortcode-options .eazy-flickity-slider-option {
+    display: inline-block;
+    margin: 1em auto;
+    width: 24%;
+  }
+  .eazy-slider-shortcode-options .eazy-flickity-slider-option p {
+    display: inline-block;
+    font-weight: 800;
+    line-height: 1;
+    margin: 0 auto;
+    width: 60%;
+    word-wrap: break-word;
+  }
+  .eazy-slider-shortcode-options .eazy-flickity-slider-option a {
+    display: inline-block;
+    text-decoration: none;
+    width: 22.5%;
+  }
+  .eazy-slider-shortcode-options .eazy-flickity-slider-option a span {
+    font-size: 17px;
+    height: 17px;
+    width: 17px;
+  }
+  .eazy-slider-shortcode-options .eazy-flickity-slider-option select {
+    display: block;
+    width: 80%;
+  }
+}

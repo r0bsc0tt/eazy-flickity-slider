@@ -39,10 +39,6 @@ var eazy_slider_properties = {"sliders":[]};
         eazy_slider_height = "100%";
       }
 
-
-
-
-
       //if #eazy_slider_name_select is selected, add shortcode to editor       
       if (form_shortcode !== "") {
           // add the shortcoe to the editor
@@ -63,14 +59,7 @@ var eazy_slider_properties = {"sliders":[]};
                 imagesloaded: eazy_slider_imagesloaded,
                 cellalign: eazy_slider_cellalign,
             };
-
-            if (eazy_slider_draggable === "undefined") {
-               //Undefined
-               console.log("draggable is not set!");
-            }
-
       }
-
     }
 
 function passJson() {

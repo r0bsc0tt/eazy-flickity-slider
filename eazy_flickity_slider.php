@@ -27,5 +27,6 @@ require_once(EZ_FLICKITY_ELEMENTS_PATH . 'resources/eazy_flickity_slider_functio
 require_once(EZ_FLICKITY_ELEMENTS_PATH . 'resources/eazy_flickity_slider_display.php');
 require_once(EZ_FLICKITY_ELEMENTS_PATH . 'resources/eazy_flickity_slider_script_styles.php');
 require_once(EZ_FLICKITY_ELEMENTS_PATH . 'resources/eazy_flickity_slider_admin.php');
+require_once(EZ_FLICKITY_ELEMENTS_PATH . 'resources/eazy_flickity_slider_admin_slide_link.php');
 require_once(EZ_FLICKITY_ELEMENTS_PATH . 'resources/eazy_flickity_slider_admin_tinymce.php');
 require_once(EZ_FLICKITY_ELEMENTS_PATH . 'resources/eazy_flickity_slider_admin_settings.php');

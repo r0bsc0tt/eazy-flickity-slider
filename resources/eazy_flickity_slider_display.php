@@ -62,9 +62,9 @@ if (function_exists('eazy_flickity_slides')) {
           $eazyquery->the_post(); 
           $thumb_id = get_post_thumbnail_id();
           $eazyimage_attributes = wp_get_attachment_image_src($thumb_id,'full', true);
-          $flickity_slides[] = "
-          <div class='gallery-cell ".$eazy_sliderid."'>
-          ".($thumb_id !== '' ? "<img src='".$eazyimage_attributes[0]."' alt='".get_post(get_post_thumbnail_id())->post_title."'>". (get_the_content() !== '' ? "<div class='eazy-slider-text'>".get_the_content()."</div>" : "") : (get_the_content() !== '' ? "<div class='eazy-slider-text-no-img'>".get_the_content()."</div>" : ""))."</div>";
+          $flickity_slides[] = " 
+          <div class='gallery-cell ".$eazy_sliderid."'>".(get_post_meta(get_the_ID(), '_eazy_slide_link', true) ?  '<a href="'. get_post_meta(get_the_ID(), '_eazy_slide_link', true) .'"</a>' : '' )."
+          ".($thumb_id !== '' ? "<img src='".$eazyimage_attributes[0]."' alt='".get_post(get_post_thumbnail_id())->post_title."'>". (get_the_content() !== '' ? "<div class='eazy-slider-text'>".get_the_content()."</div>" : "") : (get_the_content() !== '' ? "<div class='eazy-slider-text-no-img'>".get_the_content()."</div>" : "")).(get_post_meta(get_the_ID(), '_eazy_slide_link', true) ?  '</a>' : '' )."</div>";
         } //end while
 
         $flickity_close = '</div>'; //closing div from class "gallery js flickity"
@@ -91,18 +91,28 @@ if (function_exists('eazy_flickity_slides')) {
   // add homepage slider function to call in theme
   function eazy_flickity_slider_homepage() {
 
-    $args = array( 'post_type' => 'eazy_flickity_slide', 'eazy_flickity_slider' => 'homepage' );
+    $args = array( 'post_type' => 'eazy_flickity_slide', 'eazy_sliderid' => 'homepage' );
     // The Query
     $the_query = new WP_Query( $args );
 
       // The Loop
       if ( $the_query->have_posts() ) {
-
       echo '<div class="eazy-flickity-homepage-slider">';
         while ( $the_query->have_posts() ) {
         $the_query->the_post();?>
-          <div class="gallery-cell">         
-            <?php the_post_thumbnail('full' ); ?>
+          <div class="gallery-cell">      
+            <?php
+            // if link is set, put a href around thumb
+            if (get_post_meta(get_the_ID(), '_eazy_slide_link', true)) { ?>
+              <a href='<?php echo get_post_meta(get_the_ID(), "_eazy_slide_link", true)?>'>
+                <?php the_post_thumbnail('full'); ?>
+              </a>
+              <?php if(get_the_content() !== ''){echo '<div class="eazy-slider-text">'.get_the_content().'</div>';} ?>
+            <?php }else {
+              the_post_thumbnail('full' );
+              if(get_the_content() !== ''){echo '<div class="eazy-slider-text">'.get_the_content().'</div>';}
+            } ?>
+
           </div>
         <?php
         } //end while

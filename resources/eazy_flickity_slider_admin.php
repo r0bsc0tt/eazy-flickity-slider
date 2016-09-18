@@ -138,8 +138,42 @@ if ('is_admin') {
       }
 
 
-    }//end if current screen is not eazy flickity silde....
+    }
 
   }
+
+
+  //admin metabox for link to slide image
+/*
+    add_action( 'add_meta_boxes_eazy_flickity_slide', 'eazy_flickity_slider_link_image', 10, 2 );
+    function eazy_flickity_slider_link_image( $post ) {
+        add_meta_box( 
+            'eazy-flickity-slide-link',
+            __( 'Eazy Flickity Slide Link' ),
+            'render_eazy_flickity_slider_link_box',
+            'eazy_flickity_slide',
+            'side',
+            'default'
+        );
+    }
+
+
+    function render_eazy_flickity_slider_link_box() { 
+      // add nonce field
+      wp_nonce_field( basename( __FILE__ ), 'eazyslidelink_nonce' );  
+      // retrieve the _food_carbohydrates current value
+      $current_slidelink = get_post_meta( $post->ID, '_eazy_slide_link', true );
+
+      ?>
+          <input type="text" name="eazyslidelink">
+    <?php }
+
+
+    add_action( 'save_post', 'save_eazy_slide_link' );
+    function save_eazy_slide_link($post_id) {
+
+    }
+ */
+    
 
 }// end if admin

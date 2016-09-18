@@ -4,22 +4,23 @@ if (function_exists('eazy_flickity_slides')) {
  // get all options set for shortcode, that are saved as object in custom field eazy-slider-option
   function get_eazy_script_options() {
     $thisid = get_queried_object_id();
-    $all_options = get_post_meta( $thisid, 'eazy-slider-options' );
-    $all_json = $all_options[0];
+    $all_options = get_post_meta( $thisid );
+    if (array_key_exists('eazy-slider-options', $all_options)) {
+        $all_json = $all_options['eazy-slider-options'][0];
+        //split string where object closes and opens
+        $split = preg_split( '(}{)', $all_json, -1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE );
 
-    //split string where object closes and opens
-    $split = preg_split( '(}{)', $all_json, -1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE );
+        $new_array = array();
+        foreach ($split as $optionkey => $optionvalue) {
+         // remove { and } from the strings
+          $optionvalue = str_replace(array('{','}'), '', $optionvalue);
 
-    $new_array = array();
-    foreach ($split as $optionkey => $optionvalue) {
-     // remove { and } from the strings
-      $optionvalue = str_replace(array('{','}'), '', $optionvalue);
+         $exploded[$optionkey] = explode(",", $optionvalue);
 
-     $exploded[$optionkey] = explode(",", $optionvalue);
-
+        }
+      return $exploded;
     }
-
-    return $exploded;
+    
   }
 
 

@@ -59,9 +59,9 @@ if (function_exists('eazy_flickity_slides')) {
       $pagedots           = eazy_string_clean($value[9]);
       $imagesloaded       = eazy_string_clean($value[10]);
       $cellalign          = eazy_string_clean($value[11]);
-     ?>
+    ?>
 
-          <script type="text/javascript">
+        <script type="text/javascript">
           var changeSliderSize = document.getElementById("slider-<?php echo $slideid; ?>");
           changeSliderSize.style.maxWidth = "<?php echo $slidewidth; ?>";
           changeSliderSize.style.maxHeight = "<?php echo $slideheight; ?>";
@@ -76,9 +76,9 @@ if (function_exists('eazy_flickity_slides')) {
                   }if ($pagedots !== "" ) { ?> pageDots: <?php echo $pagedots ; ?>, <?php 
                   }if ($imagesloaded !== "" ) { ?> imagesLoaded: <?php echo $imagesloaded; ?>,  <?php 
                   }if ($cellalign !== "" ) { ?> cellAlign: "<?php echo $cellalign ; ?>", <?php } ?>
-          });
-          
-      </script>
+          });  
+        </script>
+
     <?php }
     }
   }
@@ -97,9 +97,16 @@ if (function_exists('eazy_flickity_slides')) {
           lazyLoad: true,
           wrapAround: true,
           //cellSelector: '.gallery-cell',
-          //setGallerySize: false
+          setGallerySize: true,
           });
+
+          jQuery( window ).load(function() { 
+            jQuery('.gallery-call').css("display", "block");
+          })
+
       </script>
+
+
     <?php
   }
 

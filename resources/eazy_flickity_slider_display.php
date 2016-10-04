@@ -105,11 +105,12 @@ if (function_exists('eazy_flickity_slides')) {
             // if link is set, put a href around thumb
             if (get_post_meta(get_the_ID(), '_eazy_slide_link', true)) { ?>
               <a href='<?php echo get_post_meta(get_the_ID(), "_eazy_slide_link", true)?>'>
-                <?php the_post_thumbnail('full'); ?>
+                <img data-flickity-lazyload="<?php echo the_post_thumbnail_url('full'); ?>" > 
+                <?php //the_post_thumbnail('full'); ?>
               </a>
               <?php if(get_the_content() !== ''){echo '<div class="eazy-slider-text">'.get_the_content().'</div>';} ?>
             <?php }else {
-              the_post_thumbnail('full' );
+              ?> <img data-flickity-lazyload="<?php echo the_post_thumbnail_url('full'); ?>" >  <?php
               if(get_the_content() !== ''){echo '<div class="eazy-slider-text">'.get_the_content().'</div>';}
             } ?>
 
